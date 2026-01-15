@@ -1,0 +1,13 @@
+*
+
+!.gitignore
+!.gitkeep
+!generator.py
+!alg.cpp
+!requirements.txt
+!templates/
+!templates/index.html
+!static/
+!static/**
+!.github/
+!.github/**

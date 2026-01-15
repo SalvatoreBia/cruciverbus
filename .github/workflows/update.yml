@@ -1,0 +1,50 @@
+name: Aggiorna Cruciverba (Fedora)
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Ogni giorno a mezzanotte UTC
+  workflow_dispatch:  # Permette esecuzione manuale
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    container: fedora:latest 
+
+    steps:
+      - name: Installa dipendenze Fedora
+        run: |
+          dnf install -y git gcc-c++ kissat-devel cjson-devel python3 python3-pip
+
+      - name: Checkout del codice
+        uses: actions/checkout@v4
+
+      - name: Installa dipendenze Python
+        run: |
+          pip3 install jinja2
+
+      - name: Compila il generatore C++
+        run: |
+          g++ -std=c++23 alg.cpp -lkissat -lcjson -o alg -O3
+      
+      - name: Genera cruciverba e sito HTML
+        run: |
+          python3 generator.py
+
+      - name: Prepara file per deploy
+        run: |
+          mkdir -p deploy
+          cp index.html deploy/
+          cp -r static deploy/
+          cp -r templates deploy/
+
+      - name: Deploy su GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./deploy
+          keep_files: false
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
