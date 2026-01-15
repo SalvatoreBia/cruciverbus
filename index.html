@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Cruciverba del Giorno</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <header>
+            <h1>Cruciverbus</h1>
+            <p class="subtitle">Cruciverba giornaliero</p>
+        </header>
+
+        <div class="help-controls">
+            <button id="show-errors-btn" class="help-btn">Mostra Errori</button>
+        </div>
+
+        <div class="game-layout">
+            <div class="grid-wrapper">
+                <div class="grid-container" style="--rows: 10; --cols: 10;">
+                    
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="0"
+                        data-c="0" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="0"
+                        data-c="1" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="0"
+                        data-c="2" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="0"
+                        data-c="4" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="0"
+                        data-c="5" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="0"
+                        data-c="6" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="0"
+                        data-c="7" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="0"
+                        data-c="8" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="1"
+                        data-c="1" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="1"
+                        data-c="2" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="1"
+                        data-c="3" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="1"
+                        data-c="4" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="1"
+                        data-c="8" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="1"
+                        data-c="9" autocomplete="off">
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="2"
+                        data-c="0" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="2"
+                        data-c="1" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="2"
+                        data-c="2" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="2"
+                        data-c="3" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="2"
+                        data-c="4" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="2"
+                        data-c="5" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="2"
+                        data-c="6" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="2"
+                        data-c="7" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="2"
+                        data-c="8" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="2"
+                        data-c="9" autocomplete="off">
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="3"
+                        data-c="0" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="3"
+                        data-c="5" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="3"
+                        data-c="6" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="3"
+                        data-c="7" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="3"
+                        data-c="8" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="3"
+                        data-c="9" autocomplete="off">
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="4"
+                        data-c="0" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="4"
+                        data-c="1" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="4"
+                        data-c="2" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="4"
+                        data-c="3" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="4"
+                        data-c="4" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="4"
+                        data-c="6" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="4"
+                        data-c="7" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="4"
+                        data-c="8" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="4"
+                        data-c="9" autocomplete="off">
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="5"
+                        data-c="0" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="5"
+                        data-c="1" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="5"
+                        data-c="2" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="5"
+                        data-c="3" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="5"
+                        data-c="5" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="5"
+                        data-c="6" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="5"
+                        data-c="7" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="5"
+                        data-c="8" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="5"
+                        data-c="9" autocomplete="off">
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="6"
+                        data-c="0" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="6"
+                        data-c="1" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="6"
+                        data-c="2" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="6"
+                        data-c="3" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="6"
+                        data-c="4" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="6"
+                        data-c="9" autocomplete="off">
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="7"
+                        data-c="0" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="7"
+                        data-c="1" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="7"
+                        data-c="2" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="7"
+                        data-c="3" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="7"
+                        data-c="4" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="7"
+                        data-c="5" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="7"
+                        data-c="6" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="7"
+                        data-c="7" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="7"
+                        data-c="8" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="7"
+                        data-c="9" autocomplete="off">
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="8"
+                        data-c="0" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="8"
+                        data-c="1" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="8"
+                        data-c="5" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="8"
+                        data-c="6" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="8"
+                        data-c="7" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="8"
+                        data-c="8" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="9"
+                        data-c="1" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="9"
+                        data-c="2" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="9"
+                        data-c="3" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="9"
+                        data-c="4" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="9"
+                        data-c="5" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <div class="grid-cell black"></div>
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="9"
+                        data-c="7" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="9"
+                        data-c="8" autocomplete="off">
+                    
+                    
+                    
+
+                    
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="9"
+                        data-c="9" autocomplete="off">
+                    
+                    
+                    
+                </div>
+            </div>
+
+            <div class="clues-container">
+                <div class="clue-column">
+                    <h2>Orizzontali</h2>
+                    <ul id="across-clues">
+                        
+                        <li id="clue-across-0" data-id="0" data-dir="across">
+                            Gas per veicoli (sigla)
+                        </li>
+                        
+                        <li id="clue-across-1" data-id="1" data-dir="across">
+                            Gin __: è un long drink
+                        </li>
+                        
+                        <li id="clue-across-2" data-id="2" data-dir="across">
+                            Una stanza a Londra
+                        </li>
+                        
+                        <li id="clue-across-3" data-id="3" data-dir="across">
+                            L'arsenico del chimico
+                        </li>
+                        
+                        <li id="clue-across-4" data-id="4" data-dir="across">
+                            Un moderno e pratico apparecchio per riprese
+                        </li>
+                        
+                        <li id="clue-across-5" data-id="5" data-dir="across">
+                            Un gruppo selezionato di persone
+                        </li>
+                        
+                        <li id="clue-across-6" data-id="6" data-dir="across">
+                            Fenditura di intonaci
+                        </li>
+                        
+                        <li id="clue-across-7" data-id="7" data-dir="across">
+                            Gravano sui dorsi dei muli
+                        </li>
+                        
+                        <li id="clue-across-8" data-id="8" data-dir="across">
+                            La scatola con i dati di volo
+                        </li>
+                        
+                        <li id="clue-across-9" data-id="9" data-dir="across">
+                            L'ha vinto Morricone nel 2007
+                        </li>
+                        
+                        <li id="clue-across-10" data-id="10" data-dir="across">
+                            Fu il nono Papa
+                        </li>
+                        
+                        <li id="clue-across-11" data-id="11" data-dir="across">
+                            Un formaggio siciliano simile al pecorino
+                        </li>
+                        
+                        <li id="clue-across-12" data-id="12" data-dir="across">
+                            Il popolare Pacino
+                        </li>
+                        
+                        <li id="clue-across-13" data-id="13" data-dir="across">
+                            Il fiume di Saragozza
+                        </li>
+                        
+                        <li id="clue-across-14" data-id="14" data-dir="across">
+                            Tentato con coraggio
+                        </li>
+                        
+                        <li id="clue-across-15" data-id="15" data-dir="across">
+                            Il nome d'arte del Pierfrancesco Diliberto della TV
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="clue-column">
+                    <h2>Verticali</h2>
+                    <ul id="down-clues">
+                        
+                        <li id="clue-down-16" data-id="16" data-dir="down">
+                            Il modo di lavorare
+                        </li>
+                        
+                        <li id="clue-down-17" data-id="17" data-dir="down">
+                            Il prefisso che antepone
+                        </li>
+                        
+                        <li id="clue-down-18" data-id="18" data-dir="down">
+                            Si riceve sempre con piacere
+                        </li>
+                        
+                        <li id="clue-down-19" data-id="19" data-dir="down">
+                            La risata sui social
+                        </li>
+                        
+                        <li id="clue-down-20" data-id="20" data-dir="down">
+                            La Brockovich interpretata da Julia Roberts
+                        </li>
+                        
+                        <li id="clue-down-21" data-id="21" data-dir="down">
+                            Due compagni a bridge
+                        </li>
+                        
+                        <li id="clue-down-22" data-id="22" data-dir="down">
+                            Lascia le briciole
+                        </li>
+                        
+                        <li id="clue-down-23" data-id="23" data-dir="down">
+                            Oggi è La7
+                        </li>
+                        
+                        <li id="clue-down-24" data-id="24" data-dir="down">
+                            Si getta al cane in Francia
+                        </li>
+                        
+                        <li id="clue-down-25" data-id="25" data-dir="down">
+                            Ascoli Piceno sulle auto
+                        </li>
+                        
+                        <li id="clue-down-26" data-id="26" data-dir="down">
+                            Il Mammucari della tivù
+                        </li>
+                        
+                        <li id="clue-down-27" data-id="27" data-dir="down">
+                            Giornali e televisioni
+                        </li>
+                        
+                        <li id="clue-down-28" data-id="28" data-dir="down">
+                            Il simbolo del rubidio
+                        </li>
+                        
+                        <li id="clue-down-29" data-id="29" data-dir="down">
+                            Il biblico padre di Matusalemme
+                        </li>
+                        
+                        <li id="clue-down-30" data-id="30" data-dir="down">
+                            Una Testa che sovrasta la località di Courmayeur
+                        </li>
+                        
+                        <li id="clue-down-31" data-id="31" data-dir="down">
+                            Ottimo vino del Canavese
+                        </li>
+                        
+                        <li id="clue-down-32" data-id="32" data-dir="down">
+                            Segue moi a Parigi
+                        </li>
+                        
+                        <li id="clue-down-33" data-id="33" data-dir="down">
+                            La provincia di Amalfi
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal di completamento -->
+        <div id="completion-modal" class="modal-overlay">
+            <div class="modal-content">
+                <h2>🎉 Bravus! 🎉</h2>
+                <p>Hai completato correttamente il cruciverba!</p>
+                <button id="close-modal-btn" class="modal-btn">Chiudi</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const puzzleData = {"rows": 10, "cols": 10, "grid": ["GPL#TONIC#", "#ROOM###AS", "TELECAMERA", "E####PANEL", "CREPA#SOME", "NERA#OSCAR", "IGINO####N", "CANESTRATO", "AL###EBRO#", "#OSATO#PIF"], "clues": {"across": [{"id": 0, "row": 0, "col": 0, "word": "GPL", "clue": "Gas per veicoli (sigla)\r"}, {"id": 1, "row": 0, "col": 4, "word": "TONIC", "clue": "Gin __: \u00e8 un long drink\r"}, {"id": 2, "row": 1, "col": 1, "word": "ROOM", "clue": "Una stanza a Londra\r"}, {"id": 3, "row": 1, "col": 8, "word": "AS", "clue": "L'arsenico del chimico\r"}, {"id": 4, "row": 2, "col": 0, "word": "TELECAMERA", "clue": "Un moderno e pratico apparecchio per riprese\r"}, {"id": 5, "row": 3, "col": 5, "word": "PANEL", "clue": "Un gruppo selezionato di persone\r"}, {"id": 6, "row": 4, "col": 0, "word": "CREPA", "clue": "Fenditura di intonaci\r"}, {"id": 7, "row": 4, "col": 6, "word": "SOME", "clue": "Gravano sui dorsi dei muli\r"}, {"id": 8, "row": 5, "col": 0, "word": "NERA", "clue": "La scatola con i dati di volo\r"}, {"id": 9, "row": 5, "col": 5, "word": "OSCAR", "clue": "L'ha vinto Morricone nel 2007\r"}, {"id": 10, "row": 6, "col": 0, "word": "IGINO", "clue": "Fu il nono Papa\r"}, {"id": 11, "row": 7, "col": 0, "word": "CANESTRATO", "clue": "Un formaggio siciliano simile al pecorino\r"}, {"id": 12, "row": 8, "col": 0, "word": "AL", "clue": "Il popolare Pacino\r"}, {"id": 13, "row": 8, "col": 5, "word": "EBRO", "clue": "Il fiume di Saragozza\r"}, {"id": 14, "row": 9, "col": 1, "word": "OSATO", "clue": "Tentato con coraggio\r"}, {"id": 15, "row": 9, "col": 7, "word": "PIF", "clue": "Il nome d'arte del Pierfrancesco Diliberto della TV\r"}], "down": [{"id": 16, "row": 2, "col": 0, "word": "TECNICA", "clue": "Il modo di lavorare\r"}, {"id": 17, "row": 0, "col": 1, "word": "PRE", "clue": "Il prefisso che antepone\r"}, {"id": 18, "row": 4, "col": 1, "word": "REGALO", "clue": "Si riceve sempre con piacere\r"}, {"id": 19, "row": 0, "col": 2, "word": "LOL", "clue": "La risata sui social\r"}, {"id": 20, "row": 4, "col": 2, "word": "ERIN", "clue": "La Brockovich interpretata da Julia Roberts\r"}, {"id": 21, "row": 1, "col": 3, "word": "OE", "clue": "Due compagni a bridge\r"}, {"id": 22, "row": 4, "col": 3, "word": "PANE", "clue": "Lascia le briciole\r"}, {"id": 23, "row": 0, "col": 4, "word": "TMC", "clue": "Oggi \u00e8 La7\r"}, {"id": 24, "row": 6, "col": 4, "word": "OS", "clue": "Si getta al cane in Francia\r"}, {"id": 25, "row": 2, "col": 5, "word": "AP", "clue": "Ascoli Piceno sulle auto\r"}, {"id": 26, "row": 7, "col": 5, "word": "TEO", "clue": "Il Mammucari della tiv\u00f9\r"}, {"id": 27, "row": 2, "col": 6, "word": "MASS", "clue": "Giornali e televisioni\r"}, {"id": 28, "row": 7, "col": 6, "word": "RB", "clue": "Il simbolo del rubidio\r"}, {"id": 29, "row": 2, "col": 7, "word": "ENOC", "clue": "Il biblico padre di Matusalemme\r"}, {"id": 30, "row": 7, "col": 7, "word": "ARP", "clue": "Una Testa che sovrasta la localit\u00e0 di Courmayeur\r"}, {"id": 31, "row": 0, "col": 8, "word": "CAREMA", "clue": "Ottimo vino del Canavese\r"}, {"id": 32, "row": 7, "col": 8, "word": "TOI", "clue": "Segue moi a Parigi\r"}, {"id": 33, "row": 1, "col": 9, "word": "SALERNO", "clue": "La provincia di Amalfi\r"}]}};
+    </script>
+    <script src="static/script.js"></script>
+</body>
+
+</html>

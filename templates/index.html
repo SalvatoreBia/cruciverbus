@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Cruciverba del Giorno</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <header>
+            <h1>Cruciverbus</h1>
+            <p class="subtitle">Cruciverba giornaliero</p>
+        </header>
+
+        <div class="help-controls">
+            <button id="show-errors-btn" class="help-btn">Mostra Errori</button>
+        </div>
+
+        <div class="game-layout">
+            <div class="grid-wrapper">
+                <div class="grid-container" style="--rows: {{ data.rows }}; --cols: {{ data.cols }};">
+                    {% for row_idx in range(data.rows) %}
+                    {% set row_data = data.grid[row_idx] %}
+                    {% for col_idx in range(data.cols) %}
+                    {% set cell_char = row_data[col_idx] %}
+
+                    {% if cell_char == '#' %}
+                    <div class="grid-cell black"></div>
+                    {% else %}
+                    <input type="text" class="grid-cell white" maxlength="1" data-r="{{ row_idx }}"
+                        data-c="{{ col_idx }}" autocomplete="off">
+                    {% endif %}
+                    {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="clues-container">
+                <div class="clue-column">
+                    <h2>Orizzontali</h2>
+                    <ul id="across-clues">
+                        {% for clue in data.clues.across %}
+                        <li id="clue-across-{{ clue.id }}" data-id="{{ clue.id }}" data-dir="across">
+                            {{ clue.clue }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="clue-column">
+                    <h2>Verticali</h2>
+                    <ul id="down-clues">
+                        {% for clue in data.clues.down %}
+                        <li id="clue-down-{{ clue.id }}" data-id="{{ clue.id }}" data-dir="down">
+                            {{ clue.clue }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal di completamento -->
+        <div id="completion-modal" class="modal-overlay">
+            <div class="modal-content">
+                <h2>🎉 Bravus! 🎉</h2>
+                <p>Hai completato correttamente il cruciverba!</p>
+                <button id="close-modal-btn" class="modal-btn">Chiudi</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const puzzleData = {{ data_json | safe }};
+    </script>
+    <script src="static/script.js"></script>
+</body>
+
+</html>
