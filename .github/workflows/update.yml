@@ -2,8 +2,8 @@ name: Aggiorna Cruciverba (Fedora)
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Ogni giorno a mezzanotte UTC
-  workflow_dispatch:  # Permette esecuzione manuale
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
