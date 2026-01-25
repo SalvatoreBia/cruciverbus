@@ -169,6 +169,29 @@ def run_algorithm():
         print(f"ERRORE critico lanciando l'eseguibile: {e}")
         sys.exit(1)
 
+def assign_clue_numbers(data):
+    cell_numbers = {}
+    current_num = 1
+    
+    starting_cells = set()
+    for clue in data['clues']['across'] + data['clues']['down']:
+        starting_cells.add((clue['row'], clue['col']))
+    
+    for r in range(data['rows']):
+        for c in range(data['cols']):
+            if (r, c) in starting_cells and (r, c) not in cell_numbers:
+                cell_numbers[(r, c)] = current_num
+                current_num += 1
+    
+    for clue in data['clues']['across']:
+        clue['clueNum'] = cell_numbers[(clue['row'], clue['col'])]
+    for clue in data['clues']['down']:
+        clue['clueNum'] = cell_numbers[(clue['row'], clue['col'])]
+    
+    data['cellNumbers'] = {f"{r},{c}": num for (r, c), num in cell_numbers.items()}
+    return data
+
+
 def build_site():
     print(f"Lettura dati da: {DATA_FILE}")
     
@@ -183,6 +206,8 @@ def build_site():
     except json.JSONDecodeError as e:
         print(f"ERRORE: Il file JSON è corrotto o malformato.\n{e}")
         sys.exit(1)
+
+    data = assign_clue_numbers(data)
 
     env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
     try:

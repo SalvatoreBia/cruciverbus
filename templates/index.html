@@ -23,6 +23,10 @@
             <button id="show-errors-btn" class="help-btn">Mostra Errori</button>
         </div>
 
+        <div id="mobile-clue-bar" class="mobile-clue-bar">
+            <span id="mobile-clue-text">Tocca una casella per iniziare</span>
+        </div>
+
         <div class="game-layout">
             <div class="grid-wrapper">
                 <div class="grid-container" style="--rows: {{ data.rows }}; --cols: {{ data.cols }};">
@@ -30,12 +34,18 @@
                     {% set row_data = data.grid[row_idx] %}
                     {% for col_idx in range(data.cols) %}
                     {% set cell_char = row_data[col_idx] %}
+                    {% set cell_key = row_idx ~ ',' ~ col_idx %}
 
                     {% if cell_char == '#' %}
                     <div class="grid-cell black"></div>
                     {% else %}
-                    <input type="text" class="grid-cell white" maxlength="1" data-r="{{ row_idx }}"
-                        data-c="{{ col_idx }}" autocomplete="off">
+                    <div class="cell-wrapper">
+                        {% if cell_key in data.cellNumbers %}
+                        <span class="cell-number">{{ data.cellNumbers[cell_key] }}</span>
+                        {% endif %}
+                        <input type="text" class="grid-cell white" maxlength="1" data-r="{{ row_idx }}"
+                            data-c="{{ col_idx }}" autocomplete="off">
+                    </div>
                     {% endif %}
                     {% endfor %}
                     {% endfor %}
@@ -48,7 +58,7 @@
                     <ul id="across-clues">
                         {% for clue in data.clues.across %}
                         <li id="clue-across-{{ clue.id }}" data-id="{{ clue.id }}" data-dir="across">
-                            {{ clue.clue }}
+                            <span class="clue-num">{{ clue.clueNum }}.</span> {{ clue.clue }}
                         </li>
                         {% endfor %}
                     </ul>
@@ -58,7 +68,7 @@
                     <ul id="down-clues">
                         {% for clue in data.clues.down %}
                         <li id="clue-down-{{ clue.id }}" data-id="{{ clue.id }}" data-dir="down">
-                            {{ clue.clue }}
+                            <span class="clue-num">{{ clue.clueNum }}.</span> {{ clue.clue }}
                         </li>
                         {% endfor %}
                     </ul>

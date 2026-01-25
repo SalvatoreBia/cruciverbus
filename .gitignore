@@ -1,6 +1,6 @@
 *
 
-!*.csv
+!*.csv 
 !.gitignore
 !.gitkeep
 !generator.py

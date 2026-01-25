@@ -12,29 +12,46 @@
     --error-color: #ef4444;
 }
 
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-attachment: fixed;
     color: var(--text-color);
-    margin: 0;
-    padding: 20px;
     display: flex;
     justify-content: center;
-    min-height: 100vh;
+    align-items: flex-start;
+    padding: 8px;
+    box-sizing: border-box;
 }
 
 .main-container {
     background: #fff;
-    padding: 2rem;
+    padding: 1rem 1.5rem;
     border-radius: 16px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-    max-width: 1000px;
-    width: 100%;
+    max-width: min(95vw, 1000px);
+    max-height: calc(100vh - 16px);
+    max-height: calc(100dvh - 16px);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
 header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
 }
 
 header h1 {
@@ -64,7 +81,8 @@ header h1 {
 
 .help-controls {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
+    flex-shrink: 0;
 }
 
 .help-btn {
@@ -149,12 +167,15 @@ header h1 {
     display: flex;
     gap: 20px;
     min-width: 300px;
-    max-height: 500px;
-    overflow-y: auto;
+    max-height: 400px;
+    overflow: hidden;
 }
 
 .clue-column {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .clue-column h2 {
@@ -170,6 +191,8 @@ header h1 {
     list-style: none;
     padding: 0;
     margin: 0;
+    overflow-y: auto;
+    flex: 1;
 }
 
 .clue-column li {
@@ -188,6 +211,53 @@ header h1 {
     background-color: var(--highlight-clue);
     border-left: 3px solid var(--accent-color);
     font-weight: 500;
+}
+
+.clue-num {
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.cell-wrapper {
+    position: relative;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: #fff;
+}
+
+.cell-number {
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    font-size: 0.55rem;
+    font-weight: 600;
+    color: #444;
+    z-index: 1;
+    pointer-events: none;
+    line-height: 1;
+}
+
+.mobile-clue-bar {
+    display: none;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+    flex-shrink: 0;
+    width: 100%;
+    height: 3.5rem;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.mobile-clue-bar span {
+    display: block;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 footer {
@@ -281,7 +351,15 @@ footer {
 
 @media (max-width: 768px) {
     :root {
-        --cell-size: 32px;
+        --cell-size: 28px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        display: none;
     }
 
     .game-layout {
@@ -290,11 +368,27 @@ footer {
     }
 
     .clues-container {
-        width: 100%;
-        flex-direction: column;
+        display: none;
+    }
+
+    .mobile-clue-bar {
+        display: block;
     }
 
     .main-container {
-        padding: 1rem;
+        padding: 0.75rem;
+    }
+
+    .help-controls {
+        margin-bottom: 0.5rem;
+    }
+
+    .help-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .cell-number {
+        font-size: 0.45rem;
     }
 }
