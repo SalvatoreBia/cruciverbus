@@ -111,6 +111,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function updateMobileClueBar(clue) {
+        const bar = document.getElementById('mobile-clue-bar');
+        const text = document.getElementById('mobile-clue-text');
+        if (bar && text && clue) {
+            const dir = currentDirection === 'across' ? '→' : '↓';
+            text.textContent = `${clue.clueNum}${dir} ${clue.clue.replace(/\r?\n?$/, '')}`;
+        }
+    }
+
     function highlightUI(clue) {
         document.querySelectorAll('.grid-cell').forEach(c => c.classList.remove('word-active'));
         document.querySelectorAll('.clue-column li').forEach(li => li.classList.remove('active-clue'));
@@ -120,8 +129,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const clueEl = document.getElementById(`clue-${currentDirection}-${clue.id}`);
         if (clueEl) {
             clueEl.classList.add('active-clue');
-            clueEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            const parentUl = clueEl.closest('ul');
+            if (parentUl) {
+                const elTop = clueEl.offsetTop - parentUl.offsetTop;
+                parentUl.scrollTo({ top: elTop - 50, behavior: 'smooth' });
+            }
         }
+
+        updateMobileClueBar(clue);
 
         const len = clue.word.length;
         for (let i = 0; i < len; i++) {
@@ -156,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
             highlightUI(activeClue);
         }
 
-        cell.focus();
+        cell.focus({ preventScroll: true });
     }
 
     function jumpToNextWord() {
